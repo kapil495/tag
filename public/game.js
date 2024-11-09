@@ -1,8 +1,9 @@
 import {gameScene} from "/game_definers/scenes/gameScene.js"
+
 let config = {
     type : Phaser.AUTO,
     width: window.innerWidth,
-  height: window.innerHeight,
+    height: window.innerHeight,
   scale: 
   {
     mode: Phaser.Scale.FIT, 
@@ -10,6 +11,7 @@ let config = {
 },
     scene : gameScene,
     pixelArt : false,
-    title : "tag"
+    title : "Tag"
 }
+
 let game = new Phaser.Game(config)

@@ -1,0 +1,8 @@
+{
+    "players" : [
+        {
+            "ash" : "1"
+        }
+    ],
+    "msg" : "This is a character naming file, currently not in use by program, only to understand for developers"
+}

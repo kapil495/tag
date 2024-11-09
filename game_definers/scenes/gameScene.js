@@ -9,7 +9,7 @@ import { loadRunners } from "/game_definers/loadRunners.js"
 import { setRunners } from "/game_definers/setRunners.js" 
 
 
-let frameRate = 10
+let frameRate = 20
 let backgroundNumber = 3;
 let backgroundObjList ; 
 let chasersObjList ;

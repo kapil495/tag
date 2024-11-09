@@ -1,5 +1,5 @@
 let backgroundObjList = [];
-import {backgrounds} from "/game_definers/statics/backgrounds.js";
+import backgrounds from "/game_definers/statics/backgrounds.js";
 
 export function setBackground(sceneName,backgroundNumber) {
     console.log(`%csetting the scene` , 'color: black; font-size: 12px; background-color: green; padding: 2px;');

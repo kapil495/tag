@@ -1,5 +1,6 @@
-let backgroundObjList = [] ;
-import {backgrounds} from "/game_definers/statics/backgrounds.js";
+import backgrounds from "/game_definers/statics/backgrounds.js";
+
+let backgroundObjList = [];
 export function loadBackground(sceneName,BackgroundNumber){
     console.log(`%cloading background number ${BackgroundNumber}` , 'color: black; font-size: 12px; background-color: green; padding: 2px;');
     BackgroundNumber = BackgroundNumber- 1
