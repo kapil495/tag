@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = 3000;
+
 const logActiveRoutes = () => {
     const routes = app._router.stack
         .filter(layer => layer.route) // Only get the routes
@@ -16,6 +17,7 @@ const logActiveRoutes = () => {
     routes.forEach(route => {
         console.log(`${route.method} ${route.path}`);
     });
+    // Ye kyu hai idk
 };
 
 const create_portal = (parent_dir)=>{
@@ -31,7 +33,6 @@ const create_portals = (portals)=>{
         create_portal(portals[i])
     }
     console.log("all of the portals have been created");
-    
 }
 create_portals(portals)
 app.use(express.static('public'));
@@ -40,5 +41,5 @@ app.get('/', (_, res) => {
 });
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
+    logActiveRoutes()
 });
-logActiveRoutes()
