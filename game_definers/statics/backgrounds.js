@@ -1,5 +1,5 @@
 
-export const backgrounds = [
+const backgrounds = [
     [
         {
             name: "sky",
@@ -132,3 +132,5 @@ export const backgrounds = [
     [],
     []
 ]
+
+export default backgrounds
