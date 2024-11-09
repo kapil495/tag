@@ -10,7 +10,9 @@ as the runners decreses , the speed of runners increases
 # file folder structure
 1>   "/assets"  :=  all images (spritesheets , backgrounds) , audio files to be stored. for its internal structure go to [/assets](#/assets)
 
-2>   "/config/portals.js"  :=  it has all the routes used for serving the assets , js files and any additional file . ♨️always add the folder directory. by this all of your files are accesible by anywhere in your code.
+2>   "/config/portals.js"  :=  it has all the routes used for serving the assets , js files and any additional file . 
+instruction only when you want to import some file or image or anything 
+♨️always add the folder directory. by this all of your files inside that folder are accesible by anywhere in your code.
 
 3>   "/game_definers"  :=  contains all of the js files and configs for sprites, background , animations and scenes required for the game.js (present in /public) . for its internal structure go to [/game_definers](#game_definers)
 
