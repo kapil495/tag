@@ -57,10 +57,10 @@ export const backgrounds = [
             position: [0, 0],
             origin: [0, 0],
             shiftSpeed : {
-                up : 14,
-                down : 14,
-                right : 18,
-                left : 18,
+                up : 4,
+                down : 4,
+                right : 4,
+                left : 4,
             }
         },
         {
@@ -69,10 +69,10 @@ export const backgrounds = [
             position: [0, 0],
             origin: [0, 0],
             shiftSpeed : {
-                up : 12,
-                down : 12,
-                right : 10,
-                left : 10
+                up : 8,
+                down : 8,
+                right : 8,
+                left : 8
             }
         }, 
         {
@@ -93,10 +93,10 @@ export const backgrounds = [
             position: [0, 0],
             origin: [0, 0],
             shiftSpeed : {
-                up : 16,
-                down : 16,
-                right : 14,
-                left : 14,
+                up : 18,
+                down : 18,
+                right : 18,
+                left : 18,
             }
         }
     ],

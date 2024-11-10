@@ -31,14 +31,18 @@ instruction only when you want to import some file or image or anything
 ## /game_definers
 
 3.1 >  "/game_definers/scenes"  :=  contains all the scenes file for the game
-3.2 >  "/game_definers/statics"  :=  constains all the positions, paths , sprite sheet configs , etc which are to be used for animations and scenes. for more go to (/game_definers/statics)[#/game_definers/statics]
-3.3 >  "/game_definers/animateChasers"  :=  by name , it is used for animation chasers
-3.4 >  "/game_definers/loadBackground.js"  :=  to use import it and loadBackground(sceneName,backgroundNumber) . here 1 means 1st background . 0 means error
-3.5 >  "/game_definers/loadRunners.js"  := 🤞under develpment
-3.6 >  "/game_definers/loadChaser.js"  := to use it import it and loadChaser(sceneName)
-3.7 >  "/game_definers/setBackground.js"  := to use it import it and setBackground(sceneName , backgroundNumber)
-3.8 >  "/game_definers/setChasers.js"  := 
-3.9 >  "/game_definers"setRunners.js  :=  🤞under development
+3.2 >  "/game_definers/statics"  :=  constains all the positions, paths , sprite sheet configs , etc which are to be used for animations and scenes. for more go to [/game_definers/statics](#/game_definers/statics)
+3.3 >  "/game_definers/load"  :=  contains all the functions for loading all the asssets.
+3.4 >  "/game_definers/animate"  :=  all the functions related to || loading || of animation of wither chaser or runner are there
+3.5 >  "/game_definers/set"  :=  all the functions related to setting up the initial positions of background , chasers , runners , etc
+3.6 >  "/game_definers/keys"  :=  all the states of keyboard key if pressend or not are present inside it. for aadding the new key for checking its state if pressed or not , add that key in "/game_definers/statics/keys.js". then it can be accesible by anywhere in code by
+//gameScene.js 
+stateOf.__key
+3.6 >  "/game_definers/animate"  :=  responsible for animation of chaser and runners . can be used by
+//gameScene.js
+//currently chaserAnims has been made . runner in development
+chaserObjList[chaserNumber].play(chaserObjAnimsList[chaserNumber][AnimationNumber])
+3.7 >  "game_definers/update"  :=  constains all the files responsible for logic. all the functions of to be used inside the update() of scenes will be out from this directory . for internal structure refer to [/game_definers/update](#/game_definers/update)  
 ## /game_definers/statics
 3.2.1 >  "/game_definers/statics/background.js"  :=  contains the list of possible backgroundsin form of array backggrounds . 
 
@@ -71,3 +75,6 @@ instruction only when you want to import some file or image or anything
          name : by which that image will be refferd
          position : [x,y] position of the origin of the image (origin will be used as referance) . it will be placed initially
          origin : [x,y] origin of the image given in percent [0,0] top-left [1,1] bottom right
+## /game_definers/update
+
+3.7.1 >  "/game_definers/update/background.js"  :=  contains a f

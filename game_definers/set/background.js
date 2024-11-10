@@ -1,5 +1,10 @@
+
 import backgrounds from "/game_definers/statics/backgrounds.js";
 let backgroundObjList = [];
+let patternCount = {
+    horizontal : 4,
+    verticle : 1,
+}
 // This file contains a default function to set background, 
 // It is independent of the context, and act as an utility function.
 
@@ -10,9 +15,22 @@ export function setBackground(scene,backgroundId) {
     const background = backgrounds[backgroundId-1]
     
     background.forEach((bg)=>{
-        let bgComponent = scene.add.image(bg.position[0], bg.position[1], bg.name)
-        bgComponent.setOrigin(bg.origin[0], bg.origin[1])
-        bgComponent.setDisplaySize(scene.cameras.main.width,scene.cameras.main.height)
+        //let bgComponent = scene.add.image(bg.position[0], bg.position[1], bg.name)
+        let bgComponent = scene.add.tileSprite(
+            
+            bg.position[0] + scene.cameras.main.width / 2 ,
+            bg.position[0] + scene.cameras.main.height / 2, 
+            scene.textures.get(bg.name).getSourceImage().width * (patternCount.horizontal), 
+            scene.textures.get(bg.name).getSourceImage().height * (patternCount.verticle), 
+            bg.name
+        
+        );
+        bgComponent.setOrigin(bg.origin[0] + 0.5, bg.origin[1] + 0.5)
+        bgComponent.setDisplaySize(
+            scene.cameras.main.width * patternCount.horizontal,
+            scene.cameras.main.height * patternCount.verticle
+        
+        );
         backgroundObjList.push(bgComponent)
     })
     console.log(`%cScene with background Id: ${backgroundId} is ready` , 'color: black; font-size: 12px; background-color: green; padding: 2px;');

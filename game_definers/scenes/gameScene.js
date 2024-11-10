@@ -33,27 +33,30 @@ gameScene.preload = ()=>{
     loadRunners(gameScene)
 }
 gameScene.create = ()=>{
+    
     backgroundObjList = setBackground(gameScene , backgroundNumber);
+    if (1 == 2){
     chasersObjList = setChasers(gameScene);
     runnerObjList = setRunners(gameScene);
     chaserObjAnimsList = animateChasers(gameScene , frameRate)
     chasersObjList[1].play(chaserObjAnimsList[1][0])
+    }
     stateOf = keyState(gameScene)
 }
 gameScene.update = ()=>{
     cursors = gameScene.input.keyboard.createCursorKeys();
     actions = {
         up : cursors.up.isDown ,
-        wKey : stateOf.wKey.isDown,
+        wKey : stateOf.wKey,
         
         down : cursors.down.isDown,
-        sKey : stateOf.sKey.isDown,
+        sKey : stateOf.sKey,
         
         left : cursors.left.isDown,
-        aKey : stateOf.aKey.isDown,
+        aKey : stateOf.aKey,
         
         right : cursors.right.isDown,
-        dKey : stateOf.dKey.isDown
+        dKey : stateOf.dKey
 
     }
     console.log(actions)
