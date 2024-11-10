@@ -9,40 +9,41 @@ as the runners decreses , the speed of runners increases
 
 
 # file folder structure
-1>   "/assets"  :=  all images (spritesheets , backgrounds) , audio files to be stored. for its internal structure go to [/assets](#/assets)
+1>   "/assets"  :=  all images (spritesheets , backgrounds) , audio files to be stored. for its internal structure go to [/assets](#/assets)<br>
 
 2>   "/config/portals.js"  :=  it has all the routes used for serving the assets , js files and any additional file . 
-instruction only when you want to import some file or image or anything 
-♨️always add the folder directory. by this all of your files inside that folder are accesible by anywhere in your code.
+instruction only when you want to import some file or image or anything<br> 
+♨️always add the folder directory. by this all of your files inside that folder are accesible by anywhere in your code.<br><br>
 
-3>   "/game_definers"  :=  contains all of the js files and configs for sprites, background , animations and scenes required for the game.js (present in /public) . for its internal structure go to [/game_definers](#game_definers)
+3>   "/game_definers"  :=  contains all of the js files and configs for sprites, background , animations and scenes required for the game.js (present in /public) . for its internal structure go to [/game_definers](#game_definers)<br><br>
+4>   "/public"  :=  contains index.js and game.js file . ♨️don't add anything inside it .<br><br>
 
-4>   "/public"  :=  contains index.js and game.js file . ♨️don't add anything inside it .
-
-5>   "/index.js"  :=  you know , i know , we all know .
+5>   "/index.js"  :=  you know , i know , we all know . <br><br>
 
  
 ## /assets
 
-1.1 >  "/assets/background"  :=  no need to write
-1.2 >  "/assets/players/runners"  :=  containes sprites sheets for runners (rest 27 players)
-1.3 >  "assets/players/chasers"  :=  contains sprites sheets for the chasers (those 3 players)
+1.1 >  "/assets/background"  :=  no need to write<br><br>
+1.2 >  "/assets/players/runners"  :=  containes sprites sheets for runners (rest 27 players)<br><br>
+1.3 >  "assets/players/chasers"  :=  contains sprites sheets for the chasers (those 3 players)<br><br>
 
 ## /game_definers
 
-3.1 >  "/game_definers/scenes"  :=  contains all the scenes file for the game
-3.2 >  "/game_definers/statics"  :=  constains all the positions, paths , sprite sheet configs , etc which are to be used for animations and scenes. for more go to [/game_definers/statics](#/game_definers/statics)
-3.3 >  "/game_definers/load"  :=  contains all the functions for loading all the asssets.
-3.4 >  "/game_definers/animate"  :=  all the functions related to || loading || of animation of wither chaser or runner are there
-3.5 >  "/game_definers/set"  :=  all the functions related to setting up the initial positions of background , chasers , runners , etc
-3.6 >  "/game_definers/keys"  :=  all the states of keyboard key if pressend or not are present inside it. for aadding the new key for checking its state if pressed or not , add that key in "/game_definers/statics/keys.js". then it can be accesible by anywhere in code by
+3.1 >  "/game_definers/scenes"  :=  contains all the scenes file for the game<br><br>
+3.2 >  "/game_definers/statics"  :=  constains all the positions, paths , sprite sheet configs , etc which are to be used for animations and scenes. for more go to [/game_definers/statics](#/game_definers/statics)<br><br>
+3.3 >  "/game_definers/load"  :=  contains all the functions for loading all the asssets.<br><br>
+3.4 >  "/game_definers/animate"  :=  all the functions related to || loading || of animation of wither chaser or runner are there.<br><br>
+3.5 >  "/game_definers/set"  :=  all the functions related to setting up the initial positions of background , chasers , runners , etc.<br><br>
+3.6 >  "/game_definers/keys"  :=  all the states of keyboard key if pressend or not are present inside it. for aadding the new key for checking its state if pressed or not , add that key in "/game_definers/statics/keys.js". then it can be accesible by anywhere in code by<br>
 //gameScene.js 
 stateOf.__key
-3.6 >  "/game_definers/animate"  :=  responsible for animation of chaser and runners . can be used by
+<br>
+3.6 >  "/game_definers/animate"  :=  responsible for animation of chaser and runners . can be used by<br>
 //gameScene.js
 //currently chaserAnims has been made . runner in development
 chaserObjList[chaserNumber].play(chaserObjAnimsList[chaserNumber][AnimationNumber])
-3.7 >  "game_definers/update"  :=  constains all the files responsible for logic. all the functions of to be used inside the update() of scenes will be out from this directory . for internal structure refer to [/game_definers/update](#/game_definers/update)  
+<br>
+3.7 >  "game_definers/update"  :=  constains all the files responsible for logic. all the functions of to be used inside the update() of scenes will be out from this directory . for internal structure refer to [/game_definers/update](#/game_definers/update)<br><br>  
 ## /game_definers/statics
 3.2.1 >  "/game_definers/statics/background.js"  :=  contains the list of possible backgroundsin form of array backggrounds . 
 
