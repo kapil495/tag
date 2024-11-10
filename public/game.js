@@ -13,7 +13,7 @@ let config = {
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
   fps : {
-    target : 16,
+    target : 30,
     forceSetTimeOut : true
   },
   scene: gameScene,

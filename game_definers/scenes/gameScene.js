@@ -1,5 +1,6 @@
 import { keyState } from "/game_definers/keys/states.js"
 
+import { backgrounds } from "/game_definers/statics/backgrounds.js"
 import { setBackground } from "/game_definers/set/background.js";
 import { loadBackground } from "/game_definers/load/background.js";
 import { updateBackground } from "/game_definers/update/background.js";
@@ -13,7 +14,7 @@ import { setRunners } from "/game_definers/set/runners.js"
 
 // All these value below are tend to be loaded dynamically via socket connection
 let frameRate = 10
-let backgroundNumber = 4;
+let backgroundNumber = 1;
 let backgroundObjList ; 
 let chasersObjList ;
 let chaserObjAnimsList ; // chaserObjAnimsList[player number][ animation number  ]    1:front rest    2:leftrun    3:right run     4:backrest
@@ -43,18 +44,19 @@ gameScene.update = ()=>{
     cursors = gameScene.input.keyboard.createCursorKeys();
     actions = {
         up : cursors.up.isDown ,
-        wKey : stateOf.wKey,
+        wKey : stateOf.wKey.isDown,
         
         down : cursors.down.isDown,
-        sKey : stateOf.sKey,
+        sKey : stateOf.sKey.isDown,
         
         left : cursors.left.isDown,
-        aKey : stateOf.aKey,
+        aKey : stateOf.aKey.isDown,
         
         right : cursors.right.isDown,
-        dKey : stateOf.dKey
+        dKey : stateOf.dKey.isDown
 
     }
-    updateBackground(backgroundObjList,actions)
+    console.log(actions)
+    updateBackground(backgroundObjList ,backgroundNumber , actions)
 }
 export {gameScene}
