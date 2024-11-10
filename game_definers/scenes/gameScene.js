@@ -1,20 +1,26 @@
-import { setBackground } from "/game_definers/setBackground.js";
-import { loadBackground } from "/game_definers/loadBackground.js";
+import { keyState } from "/game_definers/keys/states.js"
 
-import { loadChasers } from "/game_definers/loadChasers.js";
-import { setChasers } from "/game_definers/setChasers.js";
-import { animateChasers } from "/game_definers/animateChasers.js";
+import { setBackground } from "/game_definers/set/background.js";
+import { loadBackground } from "/game_definers/load/background.js";
+import { updateBackground } from "/game_definers/update/background.js";
 
-import { loadRunners } from "/game_definers/loadRunners.js"
-import { setRunners } from "/game_definers/setRunners.js" 
+import { loadChasers } from "/game_definers/load/chasers.js";
+import { setChasers } from "/game_definers/set/chasers.js";
+import { animateChasers } from "/game_definers/animate/chasers.js";
+
+import { loadRunners } from "/game_definers/load/runners.js"
+import { setRunners } from "/game_definers/set/runners.js" 
 
 // All these value below are tend to be loaded dynamically via socket connection
-let frameRate = 20
-let backgroundNumber = 1;
+let frameRate = 10
+let backgroundNumber = 4;
 let backgroundObjList ; 
 let chasersObjList ;
 let chaserObjAnimsList ; // chaserObjAnimsList[player number][ animation number  ]    1:front rest    2:leftrun    3:right run     4:backrest
 let runnerObjList ;
+let cursors ;
+let actions ;
+let stateOf ;
 let gameScene = new Phaser.Scene('Game');
 
 gameScene.init = ()=>{
@@ -30,9 +36,25 @@ gameScene.create = ()=>{
     chasersObjList = setChasers(gameScene);
     runnerObjList = setRunners(gameScene);
     chaserObjAnimsList = animateChasers(gameScene , frameRate)
-    
+    chasersObjList[1].play(chaserObjAnimsList[1][0])
+    stateOf = keyState(gameScene)
 }
 gameScene.update = ()=>{
+    cursors = gameScene.input.keyboard.createCursorKeys();
+    actions = {
+        up : cursors.up.isDown ,
+        wKey : stateOf.wKey,
+        
+        down : cursors.down.isDown,
+        sKey : stateOf.sKey,
+        
+        left : cursors.left.isDown,
+        aKey : stateOf.aKey,
+        
+        right : cursors.right.isDown,
+        dKey : stateOf.dKey
 
+    }
+    updateBackground(backgroundObjList,actions)
 }
 export {gameScene}

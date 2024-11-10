@@ -12,6 +12,10 @@ let config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
+  fps : {
+    target : 16,
+    forceSetTimeOut : true
+  },
   scene: gameScene,
   pixelArt: false,
   title: "Tag"
