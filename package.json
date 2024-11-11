@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "maps" : "node maps.js",
     "test": "node index.js"
   },
   "author": "",
