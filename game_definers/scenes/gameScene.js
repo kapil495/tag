@@ -21,8 +21,8 @@ import { updateArrows } from "/game_definers/update/arrows.js"
 let frameRate = 10
 let playerChaserNumber = 1 - 1
 let backgroundNumber = 3;
-let backgroundObjList ; 
-let chasersObjList ;
+let backgroundObjList; 
+let chasersObjList;
 let chaserObjAnimsList ; // chaserObjAnimsList[player number][ animation number  ]    1:front rest    2:leftrun    3:right run     4:backrest
 let runnerObjList ;
 let arrowsObjList ; 
@@ -41,15 +41,18 @@ gameScene.preload = ()=>{
     loadArrows(gameScene)
 }
 gameScene.create = ()=>{
-    
     stateOf = keyState(gameScene)
-    
     backgroundObjList = setBackground(gameScene , backgroundNumber);
     chasersObjList = setChasers(gameScene);
     runnerObjList = setRunners(gameScene);
     arrowsObjList = setArrows(gameScene);
-
     chaserObjAnimsList = animateChasers(gameScene , frameRate)
+    
+    // platforms = this.physics.add.staticGroup();
+    // platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+    // platforms.create(600, 400, 'ground');
+    // platforms.create(50, 250, 'ground');
+    // platforms.create(750, 220, 'ground');
 }
 gameScene.update = ()=>{
     cursors = gameScene.input.keyboard.createCursorKeys();
@@ -69,6 +72,6 @@ gameScene.update = ()=>{
     }
     updateBackground(backgroundObjList , backgroundNumber , actions )
     updateChasers(gameScene,chasersObjList[playerChaserNumber])
-    updateArrows(gameScene , arrowsObjList[0] , chasersObjList[0])
+    updateArrows(gameScene , arrowsObjList[0] , chasersObjList[1])
 }
 export {gameScene}
