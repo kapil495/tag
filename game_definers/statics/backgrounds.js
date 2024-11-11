@@ -1,136 +1,169 @@
 
-const backgrounds = [
+export const backgrounds = [
     [
         {
-            name: "sky",
-            path: "/assets/backgrounds/nature_1/1.png",
+            name: "1",
+            path: "/assets/backgrounds/1/1.png",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 3,
+                down : 3,
+                right : 3,
+                left : 3,
+            }
+        },
+        {
+            name: "2",
+            path: "/assets/backgrounds/1/2.svg",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 8,
+                down : 8,
+                right : 8,
+                left : 8
+            }
+        },
+        {
+            name: "3",
+            path: "/assets/backgrounds/1/3.svg",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 13,
+                down : 13,
+                right : 13,
+                left : 13,
+            }
+        }, 
+        {
+            name: "4",
+            path: "/assets/backgrounds/1/4.svg",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 18,
+                down : 18,
+                right : 18,
+                left : 18,
+            }
+        }
+    ],
+    [
+        {
+            name: "1",
+            path: "/assets/backgrounds/2/1.svg",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 4,
+                down : 4,
+                right : 4,
+                left : 4,
+            }
+        },
+        {
+            name: "2",
+            path: "/assets/backgrounds/2/2.svg",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 8,
+                down : 8,
+                right : 8,
+                left : 8
+            }
+        }, 
+        {
+            name: "3",
+            path: "/assets/backgrounds/2/3.svg",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 14,
+                down : 14,
+                right : 12,
+                left : 12,
+            }
+        }, 
+        {
+            name: "4",
+            path: "/assets/backgrounds/2/4.svg",
+            position: [0, 0],
+            origin: [0, 0],
+            shiftSpeed : {
+                up : 18,
+                down : 18,
+                right : 18,
+                left : 18,
+            }
+        }
+    ],
+    [
+        {
+            name: "1",
+            path: "/assets/backgrounds/3/1.svg",
             position: [0, 0],
             origin: [0, 0]
-        },
-        { 
-            name: "clouds", 
-            path: "/assets/backgrounds/nature_1/2.png",
-            position: [0, 0], 
-            origin: [0, 0] 
-        },
-        { 
-            name: "mountains", 
-            path: "/assets/backgrounds/nature_1/3.png", 
-            position: [0, 0], 
-            origin: [0, 0] },
-        { 
-            name: "shrubs", 
-            path: "/assets/backgrounds/nature_1/5.png", 
-            position: [0, 0], 
-            origin: [0, 0] 
-        },
-        { 
-            name: "tree1", 
-            path: "/assets/backgrounds/nature_1/6.png", 
-            position: [0, 0], 
-            origin: [0, 0] 
-        },
-        { 
-            name: "tree2", 
-            path: "/assets/backgrounds/nature_1/7.png", 
-            position: [0, 0], 
-            origin: [0, 0] 
-        },
-        { 
-            name: "grasses", 
-            path: "/assets/backgrounds/nature_1/8.png", 
-            position: [0, 0], 
-            origin: [0, 0] 
-        },
-        { 
-            name: "ground", 
-            path: "/assets/backgrounds/nature_1/10.png", 
-            position: [0, 0], 
-            origin: [0, 0] 
+        }, 
+        {
+            name: "2",
+            path: "/assets/backgrounds/3/2.svg",
+            position: [0, 0],
+            origin: [0, 0]
+        }, 
+        {
+            name: "3",
+            path: "/assets/backgrounds/3/3.svg",
+            position: [0, 0],
+            origin: [0, 0]
+        }, 
+        {
+            name: "4",
+            path: "/assets/backgrounds/3/4.svg",
+            position: [0, 0],
+            origin: [0, 0]
         }
     ],
     [
+         
         {
-            name : "sky",
-            path : "/assets/backgrounds/nature_2/1.png", 
-            position : [0,0],
-            origin : [0,0]
-        },
+            name: "1",
+            path: "/assets/backgrounds/4/1.svg",
+            position: [0, 0],
+            origin: [0, 0]
+        }, 
         {
-            name : "clouds",
-            path : "/assets/backgrounds/nature_2/2.png", 
-            position : [0,0],
-            origin : [0,0]
-        },
+            name: "2",
+            path: "/assets/backgrounds/4/2.svg",
+            position: [0, 0],
+            origin: [0, 0]
+        }, 
         {
-            name : "mountain",
-            path : "/assets/backgrounds/nature_2/3.png", 
-            position : [0,0],
-            origin : [0,0]
-        },
+            name: "3",
+            path: "/assets/backgrounds/4/3.svg",
+            position: [0, 0],
+            origin: [0, 0]
+        }, 
         {
-            name : "grasses",
-            path : "/assets/backgrounds/nature_2/4.png", 
-            position : [0,0],
-            origin : [0,0]
+            name: "4",
+            path: "/assets/backgrounds/4/4.svg",
+            position: [0, 0],
+            origin: [0, 0]
+        }, 
+        {
+            name: "5",
+            path: "/assets/backgrounds/4/5.svg",
+            position: [0, 0],
+            origin: [0, 0]
+        }, 
+        {
+            name: "6",
+            path: "/assets/backgrounds/4/6.svg",
+            position: [0, 0],
+            origin: [0, 0]
         }
-    ],
-    [
-        {
-            name : "sky",
-            path : "/assets/backgrounds/nature_3/1.png", 
-            position : [0,0],
-            origin : [0,0]
-        },
-        {
-            name : "mountain",
-            path : "/assets/backgrounds/nature_3/2.png", 
-            position :[0,0],
-            origin : [0,0]
-        },
-        {
-            name : "nothing",
-            path : "/assets/backgrounds/nature_3/3.png", 
-            position : [0,0],
-            origin : [0,0]
-        },
-        {
-            name : "trees",
-            path : "/assets/backgrounds/nature_3/4.png", 
-            position : [0,0],
-            origin : [0,0]
-        },
-    ],
-    [
-        {
-            name : "sky",
-            path : "/assets/backgrounds/nature_4/1.png",
-            position: [0,0],
-            origin : [0,0]
-        },
-        {
-            name : "clouds",
-            path : "/assets/backgrounds/nature_4/2.png",
-            position: [0,0],
-            origin : [0,0]
-        },
-        {
-            name : "mountains",
-            path : "/assets/backgrounds/nature_4/3.png",
-            position: [0,0],
-            origin : [0,0]
-        },
-        {
-            name : "trees",
-            path : "/assets/backgrounds/nature_4/4.png",
-            position: [0,0],
-            origin : [0,0]
-        }
-    ],
-    [],
-    [],
-    [],
-    []
+    ]
 ]
-
 export default backgrounds
