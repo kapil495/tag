@@ -14,7 +14,7 @@ import { setRunners } from "/game_definers/set/runners.js"
 
 // All these value below are tend to be loaded dynamically via socket connection
 let frameRate = 10
-let backgroundNumber = 1;
+let backgroundNumber = 3;
 let backgroundObjList ; 
 let chasersObjList ;
 let chaserObjAnimsList ; // chaserObjAnimsList[player number][ animation number  ]    1:front rest    2:leftrun    3:right run     4:backrest
