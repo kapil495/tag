@@ -4,7 +4,6 @@ import { chasers } from "/game_definers/statics/chasers.js"
 let anims = [];
 let chaserObjAnimsListToReturn = []
 function animateChasersWithName(sceneName , chaserName , frameRate){
-//adding all the animation of the particular chaser from chaserAnims.js
 for (let i = 0; i < chasersAnims.length; i++) {
     sceneName.anims.create({
         key : chaserName + chasersAnims[i].key,

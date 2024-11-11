@@ -1,16 +1,16 @@
-
 import backgrounds from "/game_definers/statics/backgrounds.js";
+
+// This file contains a default function to set background, 
+// It is independent of the context, and act as an utility function.
+
+// let backgroundObjList = [];
+// Last updated: 11 Nov 2024 by Kapil
+let defaults = {};
 let backgroundObjList = [];
 let patternCount = {
     horizontal : 4,
     verticle : 1,
 }
-let defaults = {};
-// This file contains a default function to set background, 
-// It is independent of the context, and act as an utility function.
-
-// Last updated: 11 Nov 2024 by Kapil
-// let backgroundObjList = [];
 export function setBackground(scene,backgroundId) {
     console.log(`%cSetting the background with Id: ${backgroundId}` , 'color: black; font-size: 12px; background-color: green; padding: 2px;');
     const background = backgrounds[backgroundId-1]
@@ -30,7 +30,6 @@ export function setBackground(scene,backgroundId) {
             scene.textures.get(bg.name).getSourceImage().width * (patternCount.horizontal), 
             scene.textures.get(bg.name).getSourceImage().height * (patternCount.verticle), 
             bg.name
-        
         );
         bgComponent.setOrigin(bg.origin[0] + 0.5, bg.origin[1] + 0.5)
         bgComponent.setDisplaySize(

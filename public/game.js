@@ -16,6 +16,13 @@ let config = {
     target : 30,
     forceSetTimeOut : true
   },
+  physics: {
+    default: 'arcade',
+    arcade: {
+        gravity: { y: 300 },
+        debug: false
+    }
+},
   scene: gameScene,
   pixelArt: false,
   title: "Tag"
