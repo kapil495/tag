@@ -4,6 +4,10 @@ export function setArrows(sceneName) {
     for (let i = 0; i < arrows.length; i++) {
         arrowsObjList.push(sceneName.add.image(arrows[i].position[0] , arrows[i].position[1] , arrows[i].name))
         arrowsObjList[i].setOrigin(arrows[i].origin[0] , arrows[i].origin[1])
+        arrowsObjList[i].setDisplaySize(
+            sceneName.cameras.main.width * arrows[i].scale.width,
+            sceneName.cameras.main.height * arrows[i].scale.height
+        )
     }
     return arrowsObjList
 }
