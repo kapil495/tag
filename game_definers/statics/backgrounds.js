@@ -11,7 +11,8 @@ export const backgrounds = [
                 down : 3,
                 right : 3,
                 left : 3,
-            }
+            },
+            verticle : 3
         },
         {
             name: "2",
@@ -61,7 +62,8 @@ export const backgrounds = [
                 down : 4,
                 right : 4,
                 left : 4,
-            }
+            },
+            verticle : 3
         },
         {
             name: "2",
@@ -111,7 +113,8 @@ export const backgrounds = [
                 down : 3,
                 right : 3,
                 left : 3,
-            }
+            },
+            verticle : 3
         }, 
         {
             name: "2",
@@ -162,7 +165,8 @@ export const backgrounds = [
                 down : 3,
                 right : 3,
                 left : 3,
-            }
+            },
+            verticle : 3
         }, 
         {
             name: "2",
