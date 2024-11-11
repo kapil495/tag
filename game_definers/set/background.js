@@ -9,7 +9,7 @@ let defaults = {};
 // This file contains a default function to set background, 
 // It is independent of the context, and act as an utility function.
 
-// Last updated: 09 Nov 2024 by Pratyaksh
+// Last updated: 11 Nov 2024 by Kapil
 // let backgroundObjList = [];
 export function setBackground(scene,backgroundId) {
     console.log(`%cSetting the background with Id: ${backgroundId}` , 'color: black; font-size: 12px; background-color: green; padding: 2px;');
@@ -25,7 +25,6 @@ export function setBackground(scene,backgroundId) {
         }
         //let bgComponent = scene.add.image(bg.position[0], bg.position[1], bg.name)
         let bgComponent = scene.add.tileSprite(
-            
             bg.position[0] + scene.cameras.main.width / 2 ,
             bg.position[0] + scene.cameras.main.height / 2, 
             scene.textures.get(bg.name).getSourceImage().width * (patternCount.horizontal), 

@@ -4,10 +4,11 @@ let chasersObjList  = [];
  * @param {*} gameScene 
  * @returns {Array}
  */
-export function setChasers(sceneName){
-    for (let i = 0; i < chasers.length; i++) {
-        chasersObjList.push(sceneName.add.sprite(chasers[i].position[0], chasers[i].position[1] , chasers[i].name))
-        chasersObjList[i].setOrigin(chasers[i].origin[0], chasers[i].origin[1])
-    }
+export function setChasers(scene){
+    chasers.forEach((chaser)=>{
+        let chaserSprite = scene.add.sprite(chasers.position[0], chaser.position[1] , chaser.name)
+        chaserSprite.setOrigin(chaser.origin[0], chaser.origin[1], chaser.name);
+        chasersObjList.push(chaserSprite)
+    })
     return chasersObjList    
 }

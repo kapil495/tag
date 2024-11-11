@@ -4,10 +4,11 @@ let runnersObjList  = [];
  * @param {*} gameScene 
  * @returns {Array}
  */
-export function setRunners(sceneName){
-    for (let i = 0; i < runners.length; i++) {
-        runnersObjList.push(sceneName.add.sprite(runners[i].position[0], runners[i].position[1] , runners[i].name))
-        runnersObjList[i].setOrigin(runners[i].origin[0], runners[i].origin[1])
-    }
+export function setRunners(scene){
+    runners.forEach((runner)=>{
+        let runnerSprite = scene.add.sprite(runners.position[0], runner.position[1] , runner.name)
+        runnerSprite.setOrigin(runner.origin[0], runner.origin[1], runner.name);
+        runnersObjList.push(runnerSprite)
+    })
     return runnersObjList    
 }
