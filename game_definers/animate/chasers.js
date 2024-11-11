@@ -1,9 +1,8 @@
-let anims = [];
-let chaserObjAnimsListToReturn = []
 import {chasersAnims} from "/game_definers/statics/chasersAnims.js";
 import { chasers } from "/game_definers/statics/chasers.js"
 
-//retund a list ['redrunLeft' , 'redrunRigth ' , .........]
+let anims = [];
+let chaserObjAnimsListToReturn = []
 function animateChasersWithName(sceneName , chaserName , frameRate){
 //adding all the animation of the particular chaser from chaserAnims.js
 for (let i = 0; i < chasersAnims.length; i++) {
