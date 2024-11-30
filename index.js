@@ -8,13 +8,13 @@ const { logActiveRoutes }= require("./helperFunctions/common/logActiveRoutes")
 
 //route handling functions
 const portals = require("./mainConfig/portals.json") 
-const { createPortal } = require("./helperFunctions/main/createPortal") //create 1 portals at a time  createPottal("string route")
-const  { createPortals }= require("./helperFunctions/main/createPortals");
+const { createPortal } = require("./helperFunctions/mainRoutes/createPortal") //create 1 portals at a time  createPottal("string route")
+const { createPortals }= require("./helperFunctions/mainRoutes/createPortals");
 
 //code
 app.use(express.static('public'));
 
-createPortals(app,portals  ,createPortal)
+createPortals(app,portals,createPortal)
 
 app.get('/', (_, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
