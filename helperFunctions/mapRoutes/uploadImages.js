@@ -34,7 +34,7 @@ function uploadImages(app, uploadPath) {
             if (!mapBlocks || !canvasHeight || !canvasLength) {
                 return res.status(400).json({ message: 'Invalid map data' });
             }
-
+            //it will convert it to map usable by game
             mapEncoder({mapBlocks : mapBlocks,canvasHeight : canvasHeight , canvasLength :canvasLength } , uploadDir);
             res.json({ message: 'Images uploaded successfully. Map has been encoded.' });
         } catch (err) {
