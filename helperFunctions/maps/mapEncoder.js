@@ -4,6 +4,8 @@ const { relativeCoordinates } = require("./mapsHelperFunctions/relativeCoordinat
 const { shiftOrigin } = require("./mapsHelperFunctions/shiftOrigin.js")
 const { newOrigin } = require("./mapsHelperFunctions/newOrigin.js")
 const { getBasepath } = require("./mapsHelperFunctions/getBasePath.js")
+const { saveJson } = require("./saveJson.js")
+const { log } = require("console")
 require('dotenv').config({ path: join(process.cwd(), './maps.env') });
 
 /**
@@ -15,7 +17,9 @@ require('dotenv').config({ path: join(process.cwd(), './maps.env') });
  * @param {Number} options.canvasLength - Length of the canvas.
  * @param {String} imageDir - Directory path of images.
  */
-function mapEncoder({ mapBlocks, canvasHeight, canvasLength , shiftSpeed}, imageDir) {
+function mapEncoder({ mapBlocks, canvasHeight, canvasLength , shiftSpeeds}, imageDir) {
+    let encodedMap =[];
+    //logic begins from here
     const baseNames = getBaseNames(imageDir);
     const defaultMapHeight = process.env.defaultMapHeight;
     const defaultMapLength = process.env.defaultMapLength;
@@ -24,16 +28,18 @@ function mapEncoder({ mapBlocks, canvasHeight, canvasLength , shiftSpeed}, image
     
     finalBlockData = shiftOrigin(relativeCoordinates(mapBlocks,mapHeightRatio,mapLengthRatio) , newOrigin())
     finalBlockData.forEach(([blockName , xCoordinate , yCoordinate])=>{
+        blockName = blockName.toUpperCase()
         let name = blockName;
         let path = getBasepath(baseNames , blockName)
         let position = [xCoordinate , yCoordinate];
         let setDisplaySize = [mapLengthRatio , mapHeightRatio]
         let origin = [0.5,0.5]
         let shiftSpeed = shiftSpeeds === undefined ? JSON.parse(process.env.shiftSpeed) : shiftSpeeds;
-        encodedMap.push({name,path,position,setDisplaySize,origin,shiftSpeed})
+        let final = {name,path,position,setDisplaySize,origin,shiftSpeed}
+        log(final)
+        encodedMap.push(final)
     })
-    console.log(encodedMap);
-    
+    saveJson("first.json" , encodedMap)
 }
 //this below is for development purposes only
 if (require.main === module) {
@@ -62,13 +68,13 @@ if (require.main === module) {
         let setDisplaySize = [mapLengthRatio , mapHeightRatio]
         let origin = [0.5,0.5]
         let shiftSpeed = shiftSpeeds === undefined ? JSON.parse(process.env.shiftSpeed) : shiftSpeeds;
+        log({name,path,position,setDisplaySize,origin,shiftSpeed})
         encodedMap.push({name,path,position,setDisplaySize,origin,shiftSpeed})
     })
-    console.log(baseNames[0]["a"]);
     console.log(baseNames);
     
     console.log(encodedMap);
-    
+    saveJson("first.json" , encodedMap)
 }
 
 module.exports = { mapEncoder }
