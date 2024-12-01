@@ -122,9 +122,9 @@ function uploadImages() {
         },
         body: JSON.stringify({
             images: imageData,
-            loadData: getTableDataWithCoordinates(),
-            length: table.rows.length,
-            breadth: table.rows[0] ? table.rows[0].cells.length : 0
+            mapBlocks: getTableDataWithCoordinates(),
+            canvasHeight: table.rows.length,
+            canvasLength: table.rows[0] ? table.rows[0].cells.length : 0
         })
     })
         .then(response => response.json())
