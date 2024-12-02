@@ -3,7 +3,51 @@
     "name": "A",
     "path": "/assets/maps/A.png",
     "position": [
+      -400,
+      -200
+    ],
+    "setDisplaySize": [
+      266.6666666666667,
+      400
+    ],
+    "origin": [
+      0.5,
+      0.5
+    ],
+    "shiftSpeed": {
+      "up": "4",
+      "down": "4",
+      "left": "4",
+      "right": "4"
+    }
+  },
+  {
+    "name": "A",
+    "path": "/assets/maps/A.png",
+    "position": [
       -133.33333333333331,
+      -200
+    ],
+    "setDisplaySize": [
+      266.6666666666667,
+      400
+    ],
+    "origin": [
+      0.5,
+      0.5
+    ],
+    "shiftSpeed": {
+      "up": "4",
+      "down": "4",
+      "left": "4",
+      "right": "4"
+    }
+  },
+  {
+    "name": "B",
+    "path": "/assets/maps/B.png",
+    "position": [
+      133.33333333333337,
       -600
     ],
     "setDisplaySize": [
@@ -26,7 +70,7 @@
     "path": "/assets/maps/B.png",
     "position": [
       133.33333333333337,
-      -200
+      200
     ],
     "setDisplaySize": [
       266.6666666666667,

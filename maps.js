@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const fs = require("node:fs")
-require("dotenv").config({path : "./maps.env"})
+require("dotenv").config({path : "./environmentVariables/maps.env"})
 
 //helper Functions
 const { logActiveRoutes } = require("./helperFunctions/common/logActiveRoutes");

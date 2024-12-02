@@ -1,4 +1,4 @@
-require("dotenv").config({path : "./main.env"})
+require("dotenv").config({path : "./environmentVariables/main.env"})
 const express = require('express');
 const path = require('path');
 const app = express();

@@ -6,7 +6,7 @@ const { newOrigin } = require("./mapsHelperFunctions/newOrigin.js")
 const { getBasepath } = require("./mapsHelperFunctions/getBasePath.js")
 const { saveJson } = require("./saveJson.js")
 const { log } = require("console")
-require('dotenv').config({ path: join(process.cwd(), './maps.env') });
+require('dotenv').config({ path: join(process.cwd(), './environmentVariables/maps.env') });
 
 /**
  * Encodes map data into a format suitable for image processing.
