@@ -1,4 +1,4 @@
-import { arrows } from "/game_definers/statics/arrows.js"
+import { arrows } from "/game/game_definers/statics/arrows.js"
 let arrowsObjList = [];
 export function setArrows(sceneName) {
     for (let i = 0; i < arrows.length; i++) {

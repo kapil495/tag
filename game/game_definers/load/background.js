@@ -1,4 +1,4 @@
-import backgrounds from "/game_definers/statics/backgrounds.js";
+import backgrounds from "/game/game_definers/statics/backgrounds.js";
 
 // This file contains a default function to load background, 
 // It is independent of the context, and act as an utility function.

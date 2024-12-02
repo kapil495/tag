@@ -1,5 +1,5 @@
-import { gameScene } from "/game_definers/scenes/gameScene.js"
-
+import { gameScene } from "/game/game_definers/scenes/gameScene.js"
+import { room } from "/game/room_definers/scenes/room.js"
 // Initial Config
 // Explanation: The Common way of defining game is to setup all func here. 
 // But we have changed the approched to more modulated, we have made every part of this project in a seperate file
@@ -23,7 +23,7 @@ let config = {
         debug: false
     }
 },
-  scene: gameScene,
+  scene: [room,gameScene],
   pixelArt: false,
   title: "Tag"
 }

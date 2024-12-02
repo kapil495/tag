@@ -1,4 +1,4 @@
-import {runners} from "/game_definers/statics/runners.js"
+import {runners} from "/game/game_definers/statics/runners.js"
 let runnersObjList  = [];
 /**
  * @param {*} gameScene 

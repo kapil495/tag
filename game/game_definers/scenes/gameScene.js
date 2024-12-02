@@ -1,25 +1,25 @@
-import { keyState } from "/game_definers/keys/states.js"
+import { states } from "/game/game_definers/keys/states.js"
 
-import { backgrounds } from "/game_definers/statics/backgrounds.js"
-import { setBackground } from "/game_definers/set/background.js";
-import { loadBackground } from "/game_definers/load/background.js";
-import { updateBackground } from "/game_definers/update/background.js";
+import { backgrounds } from "/game/game_definers/statics/backgrounds.js"
+import { setBackground } from "/game/game_definers/set/background.js";
+import { loadBackground } from "/game/game_definers/load/background.js";
+import { updateBackground } from "/game/game_definers/update/background.js";
 
-import { setMaps } from "/game_definers/set/maps.js";
-import { loadMaps } from "/game_definers/load/maps.js";
-import { updateMaps } from "/game_definers/update/maps.js";
+import { setMaps } from "/game/game_definers/set/maps.js";
+import { loadMaps } from "/game/game_definers/load/maps.js";
+import { updateMaps } from "/game/game_definers/update/maps.js";
 
-import { loadChasers } from "/game_definers/load/chasers.js";
-import { setChasers } from "/game_definers/set/chasers.js";
-import { animateChasers } from "/game_definers/animate/chasers.js";
-import { updateChasers } from "/game_definers/update/chasers.js"
+import { loadChasers } from "/game/game_definers/load/chasers.js";
+import { setChasers } from "/game/game_definers/set/chasers.js";
+import { animateChasers } from "/game/game_definers/animate/chasers.js";
+import { updateChasers } from "/game/game_definers/update/chasers.js"
 
-import { loadRunners } from "/game_definers/load/runners.js"
-import { setRunners } from "/game_definers/set/runners.js" 
+import { loadRunners } from "/game/game_definers/load/runners.js"
+import { setRunners } from "/game/game_definers/set/runners.js" 
 
-import { loadArrows } from "/game_definers/load/arrows.js"
-import { setArrows } from "/game_definers/set/arrows.js"
-import { updateArrows } from "/game_definers/update/arrows.js"
+import { loadArrows } from "/game/game_definers/load/arrows.js"
+import { setArrows } from "/game/game_definers/set/arrows.js"
+import { updateArrows } from "/game/game_definers/update/arrows.js"
 
 // All these value below are tend to be loaded dynamically via socket connection
 let frameRate = 10
@@ -53,7 +53,7 @@ gameScene.preload = ()=>{
 }
 gameScene.create = ()=>{
     
-    stateOf = keyState(gameScene)
+    stateOf = states(gameScene)
     
     backgroundObjList = setBackground(gameScene , backgroundNumber);
     chasersObjList = setChasers(gameScene);

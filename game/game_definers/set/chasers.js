@@ -1,4 +1,4 @@
-import {chasers} from "/game_definers/statics/chasers.js"
+import {chasers} from "/game/game_definers/statics/chasers.js"
 let chasersObjList  = [];
 /**
  * @param {*} gameScene 

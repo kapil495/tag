@@ -1,4 +1,4 @@
-import {chasers} from "/game_definers/statics/chasers.js"
+import {chasers} from "/game/game_definers/statics/chasers.js"
 
 export function loadChasers(sceneName) {
     for (let i = 0; i < chasers.length; i++) {

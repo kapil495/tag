@@ -1,4 +1,4 @@
-import { backgrounds } from "/game_definers/statics/backgrounds.js"
+import { backgrounds } from "/game/game_definers/statics/backgrounds.js"
 
 const updateBackgroundPosition = (backgroundId, loadedBgComponents, axisChangeFx=(x,y,shiftSpeed=0)=>[x,y]) => {
     const StaticBackground = backgrounds[backgroundId];

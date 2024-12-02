@@ -1,5 +1,5 @@
-import { chasersAnims } from "/game_definers/statics/chasersAnims.js";
-import { chasers } from "/game_definers/statics/chasers.js";
+import { chasersAnims } from "/game/game_definers/statics/chasersAnims.js";
+import { chasers } from "/game/game_definers/statics/chasers.js";
 
 let anims = [];
 let chaserObjAnimsListToReturn = [];

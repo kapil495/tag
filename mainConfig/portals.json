@@ -9,12 +9,18 @@
     "/assets/players/chasers",
     "/assets/players/runners",
 
-    "/game_definers/load",
-    "/game_definers/set",
-    "/game_definers/update",
-    "/game_definers/keys",
-    "/game_definers/animate",
-    "/game_definers/statics",
-    "/game_definers/scenes",
-    "/game_definers/maps"
+    "/game/game_definers/load",
+    "/game/game_definers/set",
+    "/game/game_definers/update",
+    "/game/game_definers/keys",
+    "/game/game_definers/animate",
+    "/game/game_definers/statics",
+    "/game/game_definers/scenes",
+    "/game/game_definers/maps",
+
+    "/game/room_definers/load",
+    "/game/room_definers/set",
+    "/game/room_definers/statics",
+    "/game/room_definers/update",
+    "/game/room_definers/scenes"
 ]

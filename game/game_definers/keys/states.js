@@ -1,4 +1,4 @@
-import { keys } from "/game_definers/statics/keys.js";
+import { keys } from "/game/game_definers/statics/keys.js";
 
 let keyStates = {};
 
@@ -12,7 +12,7 @@ let keyStates = {};
  * @returns {Object} - An object with key names (in lowercase) as properties and boolean values 
  * indicating whether the corresponding key is currently pressed (`true`) or not (`false`).
  */
-export function keyState(sceneName) {
+export function states(sceneName) {
     // Iterate over each key in the 'keys' array and check its state in the scene
     keys.forEach(key => {
         keyStates[key.toLowerCase() + "key"] = sceneName.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes[key.toUpperCase()]).isDown;
