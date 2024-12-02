@@ -5,7 +5,7 @@
     "/assets/backgrounds/3",
     "/assets/backgrounds/4",
     "/assets/arrows",
-    
+    "/assets/maps",
     "/assets/players/chasers",
     "/assets/players/runners",
 
@@ -15,6 +15,6 @@
     "/game_definers/keys",
     "/game_definers/animate",
     "/game_definers/statics",
-    "/game_definers/scenes"
-    
+    "/game_definers/scenes",
+    "/game_definers/maps"
 ]

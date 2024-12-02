@@ -5,6 +5,10 @@ import { setBackground } from "/game_definers/set/background.js";
 import { loadBackground } from "/game_definers/load/background.js";
 import { updateBackground } from "/game_definers/update/background.js";
 
+import { setMaps } from "/game_definers/set/maps.js";
+import { loadMaps } from "/game_definers/load/maps.js";
+import { updateMaps } from "/game_definers/update/maps.js";
+
 import { loadChasers } from "/game_definers/load/chasers.js";
 import { setChasers } from "/game_definers/set/chasers.js";
 import { animateChasers } from "/game_definers/animate/chasers.js";
@@ -21,11 +25,17 @@ import { updateArrows } from "/game_definers/update/arrows.js"
 let frameRate = 10
 let playerChaserNumber = 1 - 1
 let backgroundNumber = 3;
+let mapNumber = 1
+
+
 let backgroundObjList ; 
 let chasersObjList ;
 let chaserObjAnimsList ; // chaserObjAnimsList[player number][ animation number  ]    1:front rest    2:leftrun    3:right run     4:backrest
 let runnerObjList ;
+let mapsObjList ; 
 let arrowsObjList ; 
+
+
 let cursors ;
 let actions ;
 let stateOf ;
@@ -39,6 +49,7 @@ gameScene.preload = ()=>{
     loadChasers(gameScene)
     loadRunners(gameScene)
     loadArrows(gameScene)
+    loadMaps(gameScene)
 }
 gameScene.create = ()=>{
     
@@ -48,7 +59,7 @@ gameScene.create = ()=>{
     chasersObjList = setChasers(gameScene);
     runnerObjList = setRunners(gameScene);
     arrowsObjList = setArrows(gameScene);
-
+    mapsObjList = setMaps(gameScene , mapNumber)
     chaserObjAnimsList = animateChasers(gameScene , frameRate)
 }
 gameScene.update = ()=>{
@@ -70,5 +81,6 @@ gameScene.update = ()=>{
     updateBackground(backgroundObjList , backgroundNumber , actions )
     updateChasers(gameScene,chasersObjList[playerChaserNumber])
     updateArrows(gameScene , arrowsObjList[0] , chasersObjList[0])
+    updateMaps(gameScene , mapsObjList , actions)
 }
 export {gameScene}

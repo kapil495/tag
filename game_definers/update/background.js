@@ -1,37 +1,35 @@
 import { backgrounds } from "/game_definers/statics/backgrounds.js"
 
-function shiftUpBackground(backgroundObjList , backgroundNumber){
-    for (let i = 0; i < backgroundObjList.length; i++) {
-        backgroundObjList[i].y += backgrounds[backgroundNumber][i].shiftSpeed.up
-    }
-
-}
-function shiftDownBackground(backgroundObjList , backgroundNumber){
-    for (let i = 0; i < backgroundObjList.length; i++) {
-        backgroundObjList[i].y -= backgrounds[backgroundNumber][i].shiftSpeed.up
-    }
-}
-function shiftLeftBackground(backgroundObjList ,backgroundNumber){
-    for (let i = 0; i < backgroundObjList.length; i++) {
-        backgroundObjList[i].x -= backgrounds[backgroundNumber][i].shiftSpeed.left
-    }
-}
-function shiftRightBackground(backgroundObjList , backgroundNumber){
-    for (let i = 0; i < backgroundObjList.length; i++) {
-        backgroundObjList[i].x += backgrounds[backgroundNumber][i].shiftSpeed.right
-    }
+const updateBackgroundPosition = (backgroundId, loadedBgComponents, axisChangeFx=(x,y,shiftSpeed=0)=>[x,y]) => {
+    const StaticBackground = backgrounds[backgroundId];
+    loadedBgComponents.forEach((lbc, i)=>{
+        let change = axisChangeFx(lbc.x, lbc.y, StaticBackground[i].shiftSpeed)
+        lbc.x = change[0]
+        lbc.y = change[1]
+    })
 }
 
 export function updateBackground(backgroundObjList, backgroundNumber , actions) {
     backgroundNumber -= 1
     if (actions.up == true || actions.wKey == true) {
-        shiftUpBackground(backgroundObjList , backgroundNumber)
-        
-    }else if (actions.down == true || actions.sKey == true){
-        shiftDownBackground(backgroundObjList , backgroundNumber)
-    }else if (actions.right == true || actions.dKey == true){
-        shiftRightBackground(backgroundObjList , backgroundNumber)
-    }else if (actions.left == true || actions.aKey == true){
-        shiftLeftBackground(backgroundObjList , backgroundNumber)
+        updateBackgroundPosition(backgroundNumber, backgroundObjList, (x,y,shiftSpeed)=>{
+            y+=shiftSpeed.up
+            return [x,y]
+        })
+    } if (actions.down == true || actions.sKey == true){
+        updateBackgroundPosition(backgroundNumber, backgroundObjList, (x,y,shiftSpeed)=>{
+            y-=shiftSpeed.down
+            return [x,y]
+        })
+    } if (actions.right == true || actions.dKey == true){
+        updateBackgroundPosition(backgroundNumber, backgroundObjList, (x,y,shiftSpeed)=>{
+            x-=shiftSpeed.right
+            return [x,y]
+        })
+    } if (actions.left == true || actions.aKey == true){
+        updateBackgroundPosition(backgroundNumber, backgroundObjList, (x,y,shiftSpeed)=>{
+            x+=shiftSpeed.left
+            return [x,y]
+        })
     }
 }

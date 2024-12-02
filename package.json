@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "maps": "node maps.js",
+    "main" : "node index.js",
+    "test": "start npm run socket && npm run main",
+    "socket" : "node socket.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
-    "phaser": "^3.86.0"
+    "nodemon": "^3.1.7",
+    "phaser": "^3.86.0",
+    "socket.io": "^4.8.1"
   }
 }
