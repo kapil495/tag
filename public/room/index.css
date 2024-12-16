@@ -1,0 +1,137 @@
+/* Basic styles for the full-screen background */
+.vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none; /* Makes sure the vignette overlay doesn't interfere with interaction */
+    z-index: 999; /* Make sure it stays on top */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out; /* Smooth fade transition */
+}
+
+.center-box.small h3, .center-box.small p {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Make the small box scrollable */
+.center-box.small {
+    width: 50%;
+    height: 95%;
+    overflow-y: auto;  /* Force the scrollbar to always be visible when content overflows */
+    margin: 3%;
+    order: -1;
+    background-color: rgba(0, 0, 0, 0.8); /* Ensure the box has a background */
+    padding-right: 1%; /* Move the scrollbar 1% from the right edge */
+}
+
+/* Style the scrollbar */
+.center-box.small::-webkit-scrollbar {
+    width: 10px; /* Set width of the scrollbar */
+}
+
+/* Style the scrollbar track (background) */
+.center-box.small::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* Dark grey background for the track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Style the scrollbar thumb (the part you drag) */
+.center-box.small::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); /* Grey color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Style the scrollbar thumb when hovered */
+.center-box.small::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7); /* Darker grey when hovered */
+}
+
+/* Optional: For Firefox (scrollbar styling) */
+.center-box.small {
+    scrollbar-width: thin; /* Make the scrollbar thin */
+    scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.2); /* Thumb and track colors */
+}
+
+/* Make the large box scrollable */
+.center-box.large {
+    width: 100%;
+    height: 95%;
+    overflow-y: auto;  /* Force the scrollbar to appear when content overflows */
+    margin: 3%;
+    background-color: rgba(0, 0, 0, 0.8); /* Ensure the box has a background */
+    padding-right: 1%; /* Move the scrollbar 1% from the right edge */
+}
+
+/* Style the scrollbar for the large box */
+.center-box.large::-webkit-scrollbar {
+    width: 10px; /* Set width of the scrollbar */
+}
+
+/* Style the scrollbar track (background) */
+.center-box.large::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* Dark grey background for the track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Style the scrollbar thumb (the part you drag) */
+.center-box.large::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); /* Grey color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Style the scrollbar thumb when hovered */
+.center-box.large::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7); /* Darker grey when hovered */
+}
+
+/* Optional: For Firefox (scrollbar styling) */
+.center-box.large {
+    scrollbar-width: thin; /* Make the scrollbar thin */
+    scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.2); /* Thumb and track colors */
+}
+
+/* Container to hold the boxes side by side */
+.box-container {
+    display: flex;
+    justify-content: space-between;  /* Space between the two boxes */
+    width: 80%; /* Adjust this to the desired total width of the container */
+    height: 90%; /* Adjust height if needed */
+}
+
+/* Shared styles for both boxes */
+.center-box {
+    height: 100%; /* Use 100% height relative to the container */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with 80% transparency */
+    border-radius: 15px; /* Curved edges */
+}
+
+/* Large box with 70% width */
+.center-box.large {
+    width: 100%;
+    height: 95%;
+    margin: 3%;
+}
+
+/* Small box with 50% width */
+.center-box.small {
+    width: 50%;
+    height: 95%;
+    order: -1;  /* Moves the small box to the left */
+    margin: 3%;
+}

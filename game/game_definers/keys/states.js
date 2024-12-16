@@ -19,7 +19,7 @@ export function states(sceneName) {
     });
 
     // Log the current key states to the console
-    console.log(keyStates);
+   // console.log(keyStates);
     
     return keyStates;
 }

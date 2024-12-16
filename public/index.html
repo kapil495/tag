@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.js"></script>
-    <title>Tag game Pokemon edition</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            background: #202020;
-        }
-    </style>
+    <title>Image Loader</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <script type="module" src = "/socket.js"></script>
-    <script type="module" src="/game.js"></script>
-
+    <div class="mainBox">
+        <div class="joinRoomText hide">Joining The Room</div>
+        <div class="makeRoomText hide">Creating The Room</div>
+        <div class="joinRoom">
+            Join Room
+        </div>
+        <div class="makeRoom">
+            Create Room
+        </div>
+        <div class="shiftToMakeRoom hide">Wanna Create Room </div>
+        <div class="shiftToJoinRoom hide">Wanna Join Room </div>
+        <div class="joinRoomForm hide">
+            <input type="text" name="PlayerName" class="joinRoomInput" id="PlayerName" placeholder="Player Name">
+            <input type="text" name="joinRoomId" class="joinRoomInput" id="joinRoomId" placeholder="Room id">
+        </div>
+        <div class="makeRoomForm hide">
+            <input type="text" name="PlayerName" class="makeRoomInput" id="PlayerName" placeholder="Player Name">
+            <input type="text" name="makeRoomName" class="makeRoomInput" id="makeRoomName" placeholder="Room Name">
+        </div>
+    </div>
+    <script src="./index.js" type="module"></script>
 </body>
 </html>

@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Background color */
+    color: white; /* Text color for contrast */
+}
+
+.mainBox {
+    width: 70%;
+    height: 70%;
+    background-color: rgba(45, 45, 45, 0.67); /* Updated background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Optional: Rounded corners for the main box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Shadow for depth */
+    position: absolute; /* To enable centering */
+    top: 50%; /* Positioning 50% from the top */
+    left: 50%; /* Positioning 50% from the left */
+    transform: translate(-50%, -50%); /* Shifting by 50% to center the box */
+    position: absolute;
+}
+
+.joinRoom, .makeRoom {
+    font-size: 170%;
+    width: 30%;
+    height: 30%;
+    background-color: rgba(90, 90, 90, 0.5); /* Dark gray background */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    margin: 2%;
+    justify-content: center;
+    align-items: center; /* Center content inside the box */
+    padding: 2%; /* Space around content */
+    box-shadow: 0 4px 8px rgba(97, 92, 92, 0.3); /* Shadow for depth */
+    color: white; /* White text for better contrast */
+    text-align: center; /* Ensure text is centered */
+    font-weight: bold; /* Bold text for emphasis */
+}
+.shiftToJoinRoom , .shiftToMakeRoom {
+    position :absolute;
+    bottom: 3%;
+    font-size: 160%;
+    width: 50%;
+    height: 7%;
+    background-color: rgba(90, 90, 90, 0.5);
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    margin: 2%;
+    justify-content: center;
+    align-items: center; /* Center content inside the box */
+    padding: 2%; /* Space around content */
+    box-shadow: 0 4px 8px rgba(97, 92, 92, 0.3); /* Shadow for depth */
+    color: white; /* White text for better contrast */
+    text-align: center; /* Ensure text is centered */
+    font-weight: bold; /* Bold text for emphasis */
+}
+.joinRoomText , .makeRoomText{
+    position: absolute;
+    top : 10%;
+    font-size: 170%;
+    font-family: 'Arial Narrow', Arial, sans-serif;;
+}
+.joinRoom h2, .makeRoom h2 {
+    margin: 0;
+    font-size: inherit; /* Inherit font size from parent */
+    color: #F8FAFC; /* Light color for text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: Shadow for text */
+}
+
+input {
+    width: 80%;
+    height: 6vh;
+    margin: 3.5%;
+    text-align: center;
+    padding: 1vh;
+    font-size: 3.2vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    border : 2px solid #3d3d3d;
+    border-radius: 5vh;
+    color: #b0afaf;
+    font-family: calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+input::placeholder {
+    text-align: center; /* Horizontally center the placeholder text */
+    vertical-align: middle; /* Center vertically (works better with single-line text) */
+    font-size: 3vh;
+}
+
+.joinRoom:hover {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+.makeRoom:hover{
+    background-color: rgba(100, 100, 100, 0.7);
+}
+.shiftToJoinRoom:hover{
+    background-color: rgba(100, 100, 100, 0.7);
+}
+.shiftToMakeRoom:hover{
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+.hide {
+    display: none;
+}
+/* Animation for top-left movement */
+.fade{
+    animation: fade 1s forwards;
+}
+.text
+.inputNonFade , .boxNonFade , .textNonFade {
+    animation : NonFade 1s forwards;
+}
+@keyframes fade {
+    from{}
+    to {
+        opacity: 0;
+    }
+}
+@keyframes NonFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

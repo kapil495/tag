@@ -8,6 +8,7 @@
     "/assets/maps",
     "/assets/players/chasers",
     "/assets/players/runners",
+    "/assets/inRoom/box",
 
     "/game/game_definers/load",
     "/game/game_definers/set",
@@ -18,9 +19,12 @@
     "/game/game_definers/scenes",
     "/game/game_definers/maps",
 
-    "/game/room_definers/load",
-    "/game/room_definers/set",
-    "/game/room_definers/statics",
-    "/game/room_definers/update",
-    "/game/room_definers/scenes"
+    "/game/inRoom_definers/load",
+    "/game/inRoom_definers/set",
+    "/game/inRoom_definers/statics",
+    "/game/inRoom_definers/update",
+    "/game/inRoom_definers/scenes",
+    "/game/inRoom_definers/connection",   
+    
+    "/game/socket"
 ]
