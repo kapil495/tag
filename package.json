@@ -19,6 +19,7 @@
     "nodemon": "^3.1.7",
     "phaser": "^3.86.0",
     "phaser-ui": "^0.0.8",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "uuid": "^11.0.3"
   }
 }

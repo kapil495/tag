@@ -2,6 +2,7 @@ import { changeBackgroundImages } from "../room/helperFunctions/changeBackground
 import { preloadImages } from "../room/helperFunctions/preloadImages.js"
 import { addDetailsToSmallBox } from "../room/helperFunctions/addDetailsToSmallBox.js";
 import { addSlots } from "../room/helperFunctions/addSlots.js"
+import { addVignetee } from "../room/helperFunctions/addVignetee.js"
 // Example image URLs (Replace these with your actual URLs)
 const imageUrls = [
         '/assets/backgrounds/1/orig.png', 
@@ -12,4 +13,5 @@ const imageUrls = [
 // Preload the images and then start the background transition
 preloadImages(imageUrls, 4000 ,changeBackgroundImages);
 addDetailsToSmallBox("name" , "kapil" , "grey" , "140%")
-addSlots(90,"white")
+addSlots(30,"white")
+addVignetee(0.2,0.5)

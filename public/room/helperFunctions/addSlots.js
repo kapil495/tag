@@ -46,7 +46,7 @@ function addSlots(totalSlots , color) {
         smallerBox.classList.add('slot')
         
         // Optionally, you can add content to each smaller box
-        smallerBox.textContent = `Box ${i + 1}`;
+        smallerBox.textContent = ``;
         
         // Append each smaller box to the container
         largeBoxContainer.appendChild(smallerBox);

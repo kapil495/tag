@@ -86,7 +86,8 @@ function sendRequestToJoinRoom(playerName , roomName){
             "Content-Type" : "application/json"
         },
         body : JSON.stringify({})
-    }).then(()=>{
+    }).then((playerId)=>{
+        localStorage.setItem("playerId" , playerId)
         window.location = "/room/" + roomName
     })
     .catch(error => {
