@@ -3,7 +3,7 @@ function giveMyInformation(io, socket) {
     playerInformation = {
         playerId: socket.customData.playerId,
         playerName: socket.customData.playerName,
-        roomId: socket.customData.roomId
+        roomName: socket.customData.roomName
     }
     { socket.emit("myInformation", playerInformation) }
 }

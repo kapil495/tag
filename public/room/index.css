@@ -126,4 +126,8 @@ body, html {
     height: 95%;
     order: -1;  /* Moves the small box to the left */
     margin: 3%;
+    padding: 2%;
+}
+.detail {
+    color: red;
 }

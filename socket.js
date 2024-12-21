@@ -19,7 +19,7 @@ const { connection } = require("./helperFunctions/socket/ioEvents/connection")
 const { disconnect } = require("./helperFunctions/socket/ioEvents/disconnect")
 const { inRoomPlayers } = require("./helperFunctions/socket/ioEvents/inRoomPlayers")
 const { giveMyInformation } = require("./helperFunctions/socket/socketEvents/giveMyInformation")
-
+const { giveRoomServerInformation } = require("./helperFunctions/socket/socketEvents/giveRoomServerInformation")
 // Initialize Socket.IO on the server
 console.log(giveMyInformation);
 
@@ -28,6 +28,7 @@ io.on('connection', (socket) => {
   socket.on('connection' , (response)=>{ connection(io , socket , response ) })
   socket.on('inRoomPlayers', (response)=>{ inRoomPlayers(io , socket , response ) })
   socket.on('disconnect', () => { disconnect( io , socket) });
+  socket.on('giveRoomServerInformation' , ()=>{ giveRoomServerInformation(io , socket) })
   socket.on('giveMyInformation',() => { giveMyInformation(io , socket) });
 });
 

@@ -1,13 +1,11 @@
-const { getRoomData } = require("./connection")
+const { getRoomInformation } = require("./connection")
 
-let roomId , playerName , seatNumber , InRoomPlayerNames;
+let roomName , playerName , seatNumber , InRoomPlayerNames;
 function inRoomPlayers(io, socket , response){
-    roomId = response.roomId ;
-    InRoomPlayerNames = getRoomData(roomId) ;
+    roomName = response.roomName ;
+    InRoomPlayerNames = getRoomInformation(roomName) ;
     socket.emit('inRoomPlayers', InRoomPlayerNames) ;
-    console.log("aseked");
     console.log(InRoomPlayerNames);
-    
     
 }
 module.exports = { inRoomPlayers }

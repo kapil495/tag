@@ -1,5 +1,5 @@
-const { getRoomData , changeRoomData} = require("./connection.js"); // Assuming this fetches room data based on roomId
-let roomId , disconnectedPlayerName , roomData , disconnectedPlayerSeatNumber , disconnectedPlayerId;
+const { getRoomInformation , changeRoomData} = require("./connection.js"); // Assuming this fetches room data based on roomName
+let roomName , disconnectedPlayerName , roomData , disconnectedPlayerSeatNumber , disconnectedPlayerId;
 function disconnect(io, socket) {
     try {
         // Check if custom data exists on the socket
@@ -10,10 +10,10 @@ function disconnect(io, socket) {
         disconnectedPlayerName = socket.customData.playerName;
         disconnectedPlayerSeatNumber = socket.customData.seatNumber;
         disconnectedPlayerId = socket.customData.playerId;
-        roomId = socket.customData.roomId;
+        roomName = socket.customData.roomName;
 
         // Fetch the current room data
-        roomData = getRoomData(roomId);
+        roomData = getRoomInformation(roomName);
 
         // Modify the room data to remove the disconnected player
         roomData = newUpdatedRoomData(roomData , [disconnectedPlayerId , disconnectedPlayerSeatNumber])
@@ -21,11 +21,11 @@ function disconnect(io, socket) {
         
 
         //changes must be felected in actual room data present in connection.js
-        changeRoomData(roomId,roomData)
+        changeRoomData(roomName,roomData)
         // Emit updated room data to all players in the room
-        io.to(roomId).emit("updateAllPlayers", roomData);
+        io.to(roomName).emit("updateAllPlayers", roomData);
 
-        console.log(`Player ${disconnectedPlayerName} disconnected from room ${roomId}`);
+        console.log(`Player ${disconnectedPlayerName} disconnected from room ${roomName}`);
     } catch (error) {
         console.error('Error handling disconnection:', error);
     }

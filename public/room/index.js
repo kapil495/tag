@@ -12,6 +12,5 @@ const imageUrls = [
 
 // Preload the images and then start the background transition
 preloadImages(imageUrls, 4000 ,changeBackgroundImages);
-addDetailsToSmallBox("name" , "kapil" , "grey" , "140%")
-addSlots(30,"white")
+
 addVignetee(0.2,0.5)
