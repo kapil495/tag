@@ -1,5 +1,5 @@
 const { getRoomData , changeRoomData} = require("./connection.js"); // Assuming this fetches room data based on roomId
-let roomId , disconnectedPlayerName , roomData , disconnectedPlayerSeatNumber;
+let roomId , disconnectedPlayerName , roomData , disconnectedPlayerSeatNumber , disconnectedPlayerId;
 function disconnect(io, socket) {
     try {
         // Check if custom data exists on the socket
@@ -9,13 +9,14 @@ function disconnect(io, socket) {
 
         disconnectedPlayerName = socket.customData.playerName;
         disconnectedPlayerSeatNumber = socket.customData.seatNumber;
+        disconnectedPlayerId = socket.customData.playerId;
         roomId = socket.customData.roomId;
 
         // Fetch the current room data
         roomData = getRoomData(roomId);
 
         // Modify the room data to remove the disconnected player
-        roomData = newUpdatedRoomData(roomData , [disconnectedPlayerName , disconnectedPlayerSeatNumber])
+        roomData = newUpdatedRoomData(roomData , [disconnectedPlayerId , disconnectedPlayerSeatNumber])
         console.log(roomData);
         
 
@@ -29,16 +30,16 @@ function disconnect(io, socket) {
         console.error('Error handling disconnection:', error);
     }
 }
-function newUpdatedRoomData(roomdata, disconnectedPlayer) {
+function newUpdatedRoomData(roomdata, disconnectedPlayerInfo) {
     // Find the index of the player that disconnected
-    const [disconnectedName, disconnectedSeat] = disconnectedPlayer;
+    const [disconnectedPlayerId, disconnectedPlayerSeatNumber] = disconnectedPlayerInfo;
     
     // Remove the disconnected player
-    let updatedArray = roomdata.filter(([name, seat]) => (name !== disconnectedName) && (disconnectedSeat !== seat));
+    let updatedArray = roomdata.filter(([_, __, id]) =>(id !== disconnectedPlayerId));
 
     // Adjust seat numbers of players with a seat number greater than the disconnected player's seat number
     for (let i = 0; i < roomdata.length; i++) {
-        if (roomdata[i][1] > disconnectedSeat) {
+        if (roomdata[i][1] > disconnectedPlayerSeatNumber) {
             roomdata[i][1]--;
         }
     }

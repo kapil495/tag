@@ -10,7 +10,7 @@ const { logActiveRoutes }= require("./helperFunctions/common/logActiveRoutes")
 const portals = require("./mainConfig/portals.json") 
 const { createPortal } = require("./helperFunctions/common/createPortal") //create 1 portals at a time  createPottal("string route")
 const { createPortals }= require("./helperFunctions/common/createPortals");
-const { handleMakeRoom } = require("./helperFunctions/main/handleMakeRoom")
+const { handleMakeRoom } = require("./helperFunctions/main/handleMakeRoom");
 //code
 app.use(express.static(path.join(process.cwd(),'public')));
 app.use(express.json())

@@ -8,8 +8,8 @@ function connection(io,socket , response){
     //expwctwd response { name : "player name" , roomId : "room id "}
     roomId = response.roomId
     playerName = response.playerName
-    playerId = v4 // unique player id assosciated
-    seatnumber = joinPlayer(socket);
+    playerId = v4() // unique player id assosciated
+    seatnumber = joinPlayer(socket , playerId);
 
     //whener a player joins below will send the player name and seatnumber to all other player in room . { playername , seatnumber }
     socket.customData = {
@@ -20,17 +20,17 @@ function connection(io,socket , response){
     }
     io.to(roomId).emit("playerJoin" , {playerName : playerName , seatNumber : seatNumber})
 }
-function joinPlayer(socket){
+function joinPlayer(socket , playerId){
     //if room was not creted previously. then i will create a new room and make first player the HOST.
 
     if ( checkIfRoomIsAlreadyCreated(roomId)) {
         seatNumber = allRooms[roomId].length //its the seatnumber
-        allRooms[roomId].push([playerName , seatNumber ]) // allRooms.roomid = [ [ playername  , seatNumber ] , .......]
+        allRooms[roomId].push([playerName , seatNumber , playerId]) // allRooms.roomid = [ [ playername  , seatNumber ] , .......]
         socket.join(roomId)
         socket.emit("response" , "you have joined the room ")
     }else{
         allRooms[roomId] = []
-        allRooms[roomId].push([playerName , 0]) // allRooms.roomid = [ [ playername  , seatNumber ] ]
+        allRooms[roomId].push([playerName , 0 , playerId]) // allRooms.roomid = [ [ playername  , seatNumber ] ]
         socket.emit("response" , "room have been added. you are host")
         socket.join(roomId)
         seatNumber = 0

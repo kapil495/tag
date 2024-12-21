@@ -18,15 +18,17 @@ const io = socketIo(server , {
 const { connection } = require("./helperFunctions/socket/ioEvents/connection")
 const { disconnect } = require("./helperFunctions/socket/ioEvents/disconnect")
 const { inRoomPlayers } = require("./helperFunctions/socket/ioEvents/inRoomPlayers")
-
+const { giveMyInformation } = require("./helperFunctions/socket/socketEvents/giveMyInformation")
 
 // Initialize Socket.IO on the server
+console.log(giveMyInformation);
 
 // Listen for a connection event from clients
 io.on('connection', (socket) => {
   socket.on('connection' , (response)=>{ connection(io , socket , response ) })
   socket.on('inRoomPlayers', (response)=>{ inRoomPlayers(io , socket , response ) })
   socket.on('disconnect', () => { disconnect( io , socket) });
+  socket.on('giveMyInformation',() => { giveMyInformation(io , socket) });
 });
 
 // Start the server

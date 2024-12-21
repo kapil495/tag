@@ -8,9 +8,11 @@ const roomId = window.location.pathname.split("/")[ window.location.pathname.spl
 // Send a message to the server
 socket.emit('connection', { playerName : playerName , roomId : roomId });
 socket.on('response', (data) => {
-    console.log( data);
+    console.log(data);
 });
 //ask for currently in room player . may be possible there were player befor that are joined
+socket.emit('giveMyInformation')
+socket.on('myInformation', (data) => {console.log(data)});
 socket.emit('inRoomPlayers' , { roomId : roomId } )
 socket.on("inRoomPlayers" , (allplayers) =>{
     console.log(allplayers);
